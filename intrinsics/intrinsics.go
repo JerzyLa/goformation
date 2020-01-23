@@ -93,9 +93,9 @@ func ProcessJSON(input []byte, options *ProcessorOptions) ([]byte, error) {
 			processed = unmarshalled
 		} else {
 
-			if options != nil && options.EvaluateConditions {
-				overrideParameters(unmarshalled, options)
+			overrideParameters(unmarshalled, options)
 
+			if options != nil && options.EvaluateConditions {
 				evaluateConditions(unmarshalled, options)
 			}
 
